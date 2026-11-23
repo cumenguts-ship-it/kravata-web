@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kravata Travel · Viajá sin armar nada</title>
+<meta name="description" content="Agencia de viajes online de La Plata, especialista en Argentina y Croacia. También Brasil y Europa. Elegís el viaje, escribís por WhatsApp y te respondo yo.">
+<meta name="theme-color" content="#12233D">
+<link rel="canonical" href="https://www.kravatatravel.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Kravata Travel">
+<meta property="og:title" content="Kravata Travel · Viajá sin armar nada">
+<meta property="og:description" content="Agencia de viajes online de La Plata, especialista en Argentina y Croacia. También Brasil y Europa. Elegís el viaje, escribís por WhatsApp y te respondo yo.">
+<meta property="og:url" content="https://www.kravatatravel.com/">
+<meta property="og:image" content="https://www.kravatatravel.com/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TravelAgency", "name": "Kravata Travel", "url": "https://www.kravatatravel.com/", "telephone": "+54 221 440 6602", "email": "kravatatravel@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Calle 45 N.º 1021", "addressLocality": "La Plata", "addressRegion": "Buenos Aires", "addressCountry": "AR"}, "sameAs": ["https://www.instagram.com/kravata.travel", "https://www.tiktok.com/@kravata.travel"]}</script>
+<link rel="icon" href="marca/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-pagina="inicio" data-cabecera="sobre">
+
+<main id="contenido">
+
+  <!-- Portada: video a sangre (Mixkit, ver img/FUENTES.md), consulta y la fila de promos montada -->
+  <section class="portada" aria-labelledby="titulo-portada">
+    <div class="portada__fondo" aria-hidden="true"><video id="portada-video" poster="img/portada-poster.jpg" autoplay muted loop playsinline preload="auto"></video></div>
+    <div class="envase portada__contenido">
+      <h1 id="titulo-portada">Viajá sin armar nada.</h1>
+      <p class="bajada">Especialistas en Argentina y Croacia. También armamos Brasil, Europa y a donde quieras ir. Elegís el viaje, me escribís y te respondo yo.</p>
+      <form class="buscador" id="buscador" aria-label="Consulta rápida por WhatsApp"></form>
+      <div class="portada__fila" id="panel-categoria">
+        <div class="seccion__cabeza"><div><h2 id="fila-titulo"></h2><p class="bajada" id="fila-bajada"></p></div><a class="link" id="fila-link" href="destinos.html">Ver todo</a></div>
+        <div class="fila" id="fila-categoria"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- R4 · Presentación: dos culturas, dos fotos y el símbolo como sello -->
+  <section class="seccion presenta" aria-labelledby="titulo-presenta">
+    <div class="envase presenta__grilla">
+      <div class="presenta__texto">
+        <h2 id="titulo-presenta" class="presenta__frase">Argentina y Croacia son nuestra especialidad. Conocemos cada destino, los hoteles y los guías, y armamos el viaje con ese conocimiento.</h2>
+        <p class="bajada">También armamos Brasil, Europa y a donde quieras ir. Siempre con una persona real del otro lado.</p>
+        <a class="btn btn--borde" href="#como-funciona">Cómo trabajamos</a>
+      </div>
+      <div class="presenta__collage" aria-hidden="true">
+        <figure class="presenta__foto presenta__foto--a"><img src="img/chicas/fitz-roy.jpg" alt="" loading="lazy"><figcaption>Argentina</figcaption></figure>
+        <figure class="presenta__foto presenta__foto--b"><img src="img/chicas/dubrovnik-atardecer.jpg" alt="" loading="lazy"><figcaption>Croacia</figcaption></figure>
+        <span class="presenta__sello" data-svg="simbolo-macizo"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- R1 · Vitrina de destinos: nombre gigante, pestañas numeradas con avance -->
+  <section class="vitrina" aria-labelledby="vitrina-titulo">
+    <div class="vitrina__fondo" aria-hidden="true"><img id="vitrina-img" src="img/fitz-roy.jpg" alt=""></div>
+    <div class="envase vitrina__contenido">
+      <h2 class="sr" id="vitrina-titulo">Destinos</h2>
+      <p class="vitrina__nombre" id="vitrina-nombre" aria-live="polite">Argentina</p>
+      <p class="vitrina__bajada" id="vitrina-bajada"></p>
+      <div class="vitrina__tabs" id="vitrina-tabs" role="tablist" aria-label="Elegí una región"></div>
+    </div>
+  </section>
+  <section class="seccion vitrina-fila" id="vitrina-panel" role="tabpanel" aria-labelledby="vitrina-titulo">
+    <div class="envase">
+      <div class="seccion__cabeza"><div><h2 id="vitrina-fila-titulo">Argentina</h2></div><a class="link" id="vitrina-link" href="destinos.html">Ver todo</a></div>
+      <div class="fila" id="vitrina-fila"></div>
+    </div>
+  </section>
+
+  <!-- R2 · A dónde vamos: lista grande, fotos al pasar -->
+  <section class="seccion adonde" aria-labelledby="titulo-adonde">
+    <div class="envase">
+      <h2 id="titulo-adonde" class="adonde__titulo">A dónde vamos</h2>
+      <ul class="adonde__lista" id="adonde-lista"></ul>
+      <p class="adonde__pie">¿No está el tuyo? <a class="link" href="presupuesto.html">Lo armamos a medida</a></p>
+    </div>
+    <figure class="adonde__foto adonde__foto--izq" aria-hidden="true"><img alt=""></figure>
+    <figure class="adonde__foto adonde__foto--der" aria-hidden="true"><img alt=""></figure>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="seccion" id="como-funciona" aria-labelledby="titulo-como">
+    <div class="envase">
+      <div class="seccion__cabeza">
+        <div>
+          <h2 id="titulo-como">Tres pasos, y una persona del otro lado.</h2>
+        </div>
+      </div>
+      <ol class="pasos pasos--lineas">
+        <li class="paso"><span class="paso__num">01</span><h3>Elegís un viaje</h3><p>De la web, o el que tengas en mente. Si no está, lo armamos a medida.</p></li>
+        <li class="paso"><span class="paso__num">02</span><h3>Me escribís</h3><p>Por WhatsApp. Te contesto yo, en menos de 24 horas, de lunes a viernes.</p></li>
+        <li class="paso"><span class="paso__num">03</span><h3>Te mando el detalle</h3><p>Antes de pagar: qué incluye, qué no y cuánto sale de verdad, con los impuestos sumados.</p></li>
+      </ol>
+      <p class="sin">Sin centrales, sin bots y sin esperar tres días.</p>
+    </div>
+  </section>
+
+  <!-- Lo que no te dicen: la verdad del precio -->
+  <section class="seccion seccion--oscura" aria-labelledby="titulo-verdad">
+    <div class="envase verdad">
+      <div>
+        <h2 id="titulo-verdad">Hay un precio que ves y un precio que pagás.</h2>
+        <ul>
+          <li><span class="num">1</span><span><b>Las percepciones.</b> A los servicios en el exterior se les suma un 30 %, y si pagás en efectivo, otro 5 %. No son de la agencia, pero se pagan igual.</span></li>
+          <li><span class="num">2</span><span><b>La tarifa Light.</b> El pasaje es más barato porque incluye solo el bolso de mano. La valija se paga aparte.</span></li>
+          <li><span class="num">3</span><span><b>Por eso el precio dice «desde».</b> Y antes de pagar te mando el total con todo sumado.</span></li>
+        </ul>
+        <a class="btn btn--claro" href="presupuesto.html">Pedí tu total</a>
+      </div>
+      <div class="ticket" role="group" aria-label="Ejemplo con Río de Janeiro Express">
+        <h3>Ejemplo: Río de Janeiro Express</h3>
+        <div class="ticket__fila"><span>Precio publicado, por persona en base doble</span><span>USD 669</span></div>
+        <div class="ticket__fila"><span>Percepción por servicios en el exterior (RG 5617/2024)</span><span>+ 30 %</span></div>
+        <div class="ticket__fila"><span>Si pagás en efectivo (RS 3819)</span><span>+ 5 %</span></div>
+        <div class="ticket__fila"><span>IVA argentino</span><span>según cotización</span></div>
+        <div class="ticket__fila"><span>Valija despachada (tarifa Light)</span><span>aparte</span></div>
+        <div class="ticket__fila ticket__fila--total"><span>Lo que pagás</span><span>te lo mando yo</span></div>
+        <p class="ticket__nota">Te lo paso antes de reservar, con todo sumado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Te respondo yo -->
+  <section class="seccion" aria-label="Te respondo yo">
+    <div class="envase">
+      <div class="respondo">
+        <div class="respondo__texto">
+          <blockquote data-ilumina>«Del otro lado del WhatsApp no hay una central: estoy yo. Escribime y armamos tu viaje.»</blockquote>
+          <p class="respondo__firma">Agustín<small>Kravata Travel</small></p>
+          <div class="respondo__btns">
+            <a class="btn" href="https://wa.me/5492214406602?text=Hola%20Agust%C3%ADn%2C%20quiero%20consultar%20por%20un%20viaje." target="_blank" rel="noopener" data-icono="wa">Escribile a Agustín</a>
+            <a class="btn btn--borde" href="https://www.instagram.com/kravata.travel" target="_blank" rel="noopener">@kravata.travel</a>
+          </div>
+        </div>
+        <div class="respondo__guarda" aria-hidden="true" data-svg="simbolo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pedí tu presupuesto -->
+  <section class="seccion" id="presupuesto" aria-labelledby="titulo-pres">
+    <div class="envase presupuesto">
+      <div>
+        <h2 id="titulo-pres">Viajamos a donde quieras.</h2>
+        <p class="bajada">No solo a los destinos de arriba. Contanos qué tenés en mente y te respondemos con una propuesta en menos de 24 horas.</p>
+      </div>
+      <div class="presupuesto__caja">
+        <form class="form-pres" id="form-presupuesto" aria-labelledby="titulo-pres"></form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/marca.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/config.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Botón de arrepentimiento · Kravata Travel</title>
+<meta name="description" content="Revocá la contratación de un viaje con Kravata Travel, sin penalidad, dentro de los 10 días corridos.">
+<meta name="theme-color" content="#12233D">
+<link rel="canonical" href="https://www.kravatatravel.com/arrepentimiento.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Kravata Travel">
+<meta property="og:title" content="Botón de arrepentimiento · Kravata Travel">
+<meta property="og:description" content="Revocá la contratación de un viaje con Kravata Travel, sin penalidad, dentro de los 10 días corridos.">
+<meta property="og:url" content="https://www.kravatatravel.com/arrepentimiento.html">
+<meta property="og:image" content="https://www.kravatatravel.com/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="marca/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-pagina="arrepentimiento">
+<main id="contenido">
+  <div class="envase cabeza-pagina legal">
+    <h1>Botón de arrepentimiento</h1>
+    <p class="sub">Si contrataste un viaje a distancia con Kravata Travel y querés revocar la contratación, completá este formulario. Tenés 10 días corridos desde la contratación o la entrega del comprobante de pago, según corresponda, sin penalidad ni gastos. En viajes con fecha determinada, avisanos con al menos 24 horas de anticipación a la fecha del servicio. Más información en los <a class="link" href="terminos.html">términos y condiciones</a> (punto 10).</p>
+    <form class="form-arre" id="form-arrepentimiento" novalidate>
+      <label class="fld"><span class="fld__etiqueta">Nombre y apellido *</span><input name="nombre" autocomplete="name"></label>
+      <label class="fld"><span class="fld__etiqueta">DNI *</span><input name="dni" inputmode="numeric"></label>
+      <label class="fld"><span class="fld__etiqueta">Email *</span><input name="email" type="email" autocomplete="email"></label>
+      <label class="fld"><span class="fld__etiqueta">Teléfono (opcional)</span><input name="tel" inputmode="tel" autocomplete="tel"></label>
+      <div data-campo="paquete"></div>
+      <label class="fld"><span class="fld__etiqueta">Fecha de contratación o de pago *</span><input name="fecha" type="date"></label>
+      <label class="fld fld--ancho"><span class="fld__etiqueta">Comentarios (opcional)</span><textarea name="mas" rows="3"></textarea></label>
+      <p class="form-pres__nota">No hace falta que expliques el motivo ni que te registres. Los datos se usan solo para gestionar tu solicitud.</p>
+      <button class="btn" type="submit">Generar mi solicitud</button>
+      <p class="form-estado" id="a-err" role="alert"></p>
+    </form>
+    <div class="arre-ok" id="a-ok" hidden>
+      <b>Tu código de solicitud</b>
+      <div class="arre-ok__codigo" id="a-c"></div>
+      <p><b>Último paso:</b> enviá la solicitud por email a <b>kravatatravel@gmail.com</b>. Tu pedido queda registrado cuando recibimos ese mail. Te confirmamos el código por el mismo medio dentro de las 24 horas.</p>
+      <div class="arre-ok__btns"><a class="btn" id="a-mail" href="#">Enviar por email</a><button class="btn btn--borde" id="a-cp" type="button">Copiar mensaje</button></div>
+      <p class="form-pres__nota">Si el botón de email no abre tu correo, copiá el mensaje y enviáselo a kravatatravel@gmail.com.</p>
+      <pre id="a-pre"></pre>
+    </div>
+  </div>
+</main>
+
+<script src="assets/marca.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/config.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
