@@ -172,7 +172,7 @@
   if (!quieto) document.documentElement.classList.add('anima');
   const io = !quieto && 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); }
-  }), { rootMargin: '0px 0px -6% 0px', threshold: 0.08 }) : null;
+  }), { rootMargin: '0px 0px -6% 0px', threshold: 0 }) : null;
   const observar = () => {
     document.querySelectorAll('main .seccion__cabeza, main .fila:not(#fila-categoria):not(#vitrina-fila), .pasos > li, .sin, .verdad > *, .respondo, .presupuesto > *, .region-bloque, .ficha section, .caja-precio, .cabeza-pagina, .presenta__texto, .presenta__collage, .adonde__lista')
       .forEach(el => {
@@ -624,7 +624,7 @@
       let actual = (location.hash || '#todos').slice(1);
       const pintar = () => {
         chips.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', String(c.dataset.r === actual)));
-        const act = chips.querySelector('[aria-pressed="true"]'); if (act) chips.scrollLeft = act.offsetLeft - 16;
+        const act = chips.querySelector('[aria-pressed="true"]'); if (act) chips.scrollLeft = Math.max(0, act.offsetLeft - chips.offsetLeft - 16);
         const ordenar = arr => orden === 'menor' ? [...arr].sort((a, b) => parseFloat(precioNum(a).replace('.', '')) - parseFloat(precioNum(b).replace('.', '')))
           : orden === 'mayor' ? [...arr].sort((a, b) => parseFloat(precioNum(b).replace('.', '')) - parseFloat(precioNum(a).replace('.', ''))) : arr;
         let bloques;

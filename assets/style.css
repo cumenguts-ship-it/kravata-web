@@ -354,7 +354,7 @@ p { margin: 0; }
 }
 
 /* ---------- destinos (listado) ---------- */
-.cabeza-pagina { padding: 64px 0 32px; }
+.cabeza-pagina { padding-top: 64px; padding-bottom: 32px; }
 .cabeza-pagina h1 { font-size: clamp(40px, 6vw, 68px); }
 .filtros { position: sticky; top: 76px; z-index: 10; background: var(--crema-2); padding: 12px 0; border-bottom: 1px solid var(--linea); }
 .filtros__fila { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
@@ -443,11 +443,11 @@ body:has(.esta-abierto) .flotante { display: none; }
 @media (prefers-reduced-motion: no-preference) {
   .sel__panel:not([hidden]) { animation: kv-panel .22s var(--curva); }
   .portada__fondo video { animation: kv-aparece 1.2s ease both; }
-  .portada h1 { animation: kv-sube .9s var(--curva) both; }
-  .portada .bajada { animation: kv-sube .9s var(--curva) .1s both; }
-  .buscador { animation: kv-sube .9s var(--curva) .2s both; }
-  .portada__sub, .categorias { animation: kv-sube .9s var(--curva) .3s both; }
-  .fila .entra { animation: kv-sube .6s var(--curva) both; animation-delay: calc(var(--i, 0) * 60ms); }
+  .portada h1 { animation: kv-sube .9s var(--curva) backwards; }
+  .portada .bajada { animation: kv-sube .9s var(--curva) .1s backwards; }
+  .buscador { animation: kv-sube .9s var(--curva) .2s backwards; }
+  .portada__sub, .categorias { animation: kv-sube .9s var(--curva) .3s backwards; }
+  .fila .entra { animation: kv-sube .6s var(--curva) backwards; animation-delay: calc(var(--i, 0) * 60ms); }
   .anima .revela { opacity: 0; transform: translateY(16px); transition: opacity .9s var(--curva), transform .9s var(--curva); transition-delay: calc(var(--i, 0) * 70ms); }
   .anima .revela.visto { opacity: 1; transform: none; }
   .dias li.entra { animation: kv-sube .5s var(--curva) both; animation-delay: calc(var(--i, 0) * 40ms); }
@@ -667,3 +667,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; }
 .texto-largo__pie .fuentes { margin-top: 14px; font-size: 14px; color: var(--tinta-2); }
 .texto-largo__pie .fuentes a { color: inherit; }
 @media (max-width: 640px) { .datos--legal { grid-template-columns: 1fr; } }
+
+.btn--borde-claro { background: transparent; color: var(--crema); box-shadow: inset 0 0 0 1.5px rgba(243,237,225,.7); }
+.pildora, .portada__pie, .regiones-m, .barra-movil, .galeria__cuenta { display: none; }
+@media (max-width: 760px) { .pildora { display: flex; } .portada__pie { display: flex; } .regiones-m { display: grid; } .barra-movil { display: grid; } .galeria__cuenta { display: block; } }

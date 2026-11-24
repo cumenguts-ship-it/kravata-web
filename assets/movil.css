@@ -1,0 +1,178 @@
+/* Kravata Travel · celular propio (hasta 760 px)
+   Mismo sistema que el escritorio (colores, letra, radios, voz), otra composición:
+   una cosa por pantalla, todo al alcance del pulgar, sin efectos que dependan del scroll.
+   Referencias: Airbnb y GetYourGuide (búsqueda en una píldora, filas cortas), Aman (fotos con margen y una sola acción fija),
+   Linear (título en dos tonos), Stripe (bloques apilados y botones a lo ancho). */
+
+@media (max-width: 760px) {
+  :root { --m-lado: 20px; --m-seccion: 44px; }
+  body { font-size: 15px; line-height: 1.5; padding-bottom: 76px; }
+  .envase { padding: 0 var(--m-lado); }
+  h1 { font-size: 32px; letter-spacing: -0.03em; line-height: 1.06; }
+  h2 { font-size: 22px; line-height: 1.15; }
+  h3 { font-size: 17px; }
+  .bajada { font-size: 15px; margin-top: 8px; }
+  .btn { min-height: 48px; font-size: 15px; }
+  .seccion { padding: var(--m-seccion) 0; }
+  .seccion__cabeza { margin-bottom: 16px; align-items: baseline; flex-wrap: nowrap; gap: 12px; }
+  .seccion__cabeza .link { font-size: 14px; white-space: nowrap; }
+
+  /* nada aparece al bajar: todo está desde el principio */
+  .anima .revela { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .solo-escritorio { display: none !important; }
+
+  /* ---------- encabezado: siempre sobre crema ---------- */
+  .cabecera, .cabecera--sobre, .cabecera--sobre.es-flotante { position: sticky; background: rgba(248,244,236,.96); color: var(--adriatico); backdrop-filter: saturate(1.4) blur(12px); }
+  .cabecera__fila { height: 56px; }
+  .logo svg { height: 24px; }
+  .hamburguesa { width: 44px; height: 44px; margin-right: -10px; }
+  .panel-menu { inset: 56px 0 0 0; }
+  .panel-menu a:not(.btn) { font-size: 20px; padding: 14px 0; }
+  .flotante { display: none !important; }
+
+  /* ---------- portada: título en dos tonos, una píldora y el video con margen ---------- */
+  .portada { display: flex; flex-direction: column; color: var(--adriatico); padding: 0; }
+  .portada__contenido { order: 1; padding-top: 20px; }
+  .portada h1 { font-size: 30px; max-width: none; }
+  .portada h1 .tono { color: #8A93A3; }
+  .portada .bajada { display: none; }
+  .portada__fondo { position: relative; inset: auto; height: auto !important; margin: 14px 0 0; aspect-ratio: 5 / 4; border-radius: var(--r-caja); }
+  .portada__fondo::after { background: linear-gradient(180deg, rgba(18,35,61,0) 55%, rgba(18,35,61,.55) 100%); }
+  .portada__pie { position: absolute; z-index: 2; left: 16px; right: 16px; bottom: 14px; display: flex; justify-content: space-between; align-items: end; gap: 12px; color: var(--crema); }
+  .portada__pie b { display: block; font-size: 17px; letter-spacing: -0.01em; }
+  .portada__pie small { font-size: 13px; opacity: .85; }
+  .portada__pie .btn { min-height: 40px; padding: 0 14px; font-size: 14px; }
+  .portada__fila { margin-top: 0; padding-top: var(--m-seccion); }
+  .portada__fila h2 { font-size: 22px; }
+  .portada__fila .link { color: var(--adriatico); }
+
+  .pildora { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; margin-top: 18px; padding: 0 8px 0 18px; border: 1.5px solid var(--borde); border-radius: 999px; background: var(--blanco); color: var(--tinta-2); font-size: 15px; font-weight: 500; text-align: left; cursor: pointer; box-shadow: var(--sombra); }
+  .pildora svg { width: 20px; height: 20px; color: var(--adriatico); flex: none; }
+  .pildora span { flex: 1; }
+  .pildora i { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--adriatico); color: var(--crema); font-style: normal; }
+  .pildora i svg { color: var(--crema); width: 18px; height: 18px; }
+
+  /* la consulta es una hoja a pantalla completa */
+  .buscador { display: none; }
+  .hoja-abierta .buscador { display: flex; flex-direction: column; gap: 12px; position: fixed; inset: 0; z-index: 90; margin: 0; max-width: none; padding: 0 var(--m-lado) 24px; border: 0; border-radius: 0; background: var(--crema-2); color: var(--adriatico); overflow-y: auto; animation: none; }
+  .hoja-abierta { overflow: hidden; }
+  .hoja-abierta .portada__contenido { z-index: auto; }
+  .hoja__cabeza { display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; background: var(--crema-2); z-index: 2; }
+  .hoja__cabeza b { font-size: 17px; }
+  .hoja__cerrar { width: 44px; height: 44px; margin-right: -10px; border: 0; background: none; display: grid; place-items: center; cursor: pointer; color: var(--adriatico); }
+  .hoja__cerrar svg { width: 22px; height: 22px; }
+  .hoja__ayuda { color: var(--tinta-2); font-size: 14px; margin: -4px 0 4px; }
+  .hoja-abierta .buscador .fld { background: var(--blanco); border-color: var(--borde); color: var(--tinta); min-height: 64px; }
+  .hoja-abierta .buscador .fld::before { display: none !important; }
+  .hoja-abierta .buscador .fld__etiqueta, .hoja-abierta .buscador .sel__valor.es-vacio, .hoja-abierta .buscador .sel__boton svg, .hoja-abierta .buscador .sel__fija-nota { color: var(--tinta-2); }
+  .hoja-abierta .buscador .btn { margin-top: auto; min-height: 54px; background: var(--adriatico); color: var(--crema); }
+  .hoja-abierta .buscador .form-estado { color: var(--tinta-2); }
+
+  /* ---------- filas: deslizar con la siguiente asomando, sin fundidos ni barra ---------- */
+  .fila, .fila.hay-der, .fila.hay-izq { -webkit-mask-image: none; mask-image: none; --mascara: none; }
+  .fila { grid-auto-columns: 68%; gap: 12px; padding-bottom: 20px; margin-bottom: -8px; }
+  .fila-avance { display: none; }
+
+  /* ---------- tarjeta compacta: foto, nombre, días y precio ---------- */
+  .tarjeta { padding: 0; box-shadow: none; background: transparent; }
+  .tarjeta:hover, .tarjeta:focus-within { transform: none; box-shadow: none; }
+  .tarjeta__foto { border-radius: var(--r-caja); aspect-ratio: 4 / 3; }
+  .tarjeta__cuerpo { padding: 10px 2px 0; gap: 2px; }
+  .tarjeta h3 { font-size: 16px; line-height: 1.25; }
+  .tarjeta__dias { font-size: 13px; margin: 0; }
+  .tarjeta .incluye, .tarjeta__dato, .tarjeta__precio small { display: none; }
+  .tarjeta__precio { margin-top: 4px; padding: 0; }
+  .tarjeta__precio span { font-size: 13px; }
+  .tarjeta__precio b { font-size: 17px; }
+  .etiqueta { top: 10px; left: 10px; font-size: 12px; padding: 4px 9px; }
+  .tarjeta-nota { padding: 20px 18px; }
+  .tarjeta-nota h3 { font-size: 18px; }
+  .tarjeta-nota ul { font-size: 14px; }
+
+  /* ---------- regiones: cuatro fotos en 2 × 2 ---------- */
+  .regiones-m { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .region-m { position: relative; display: block; aspect-ratio: 4 / 5; border-radius: var(--r-caja); overflow: hidden; color: var(--crema); text-decoration: none; background: var(--adriatico); }
+  .region-m img { width: 100%; height: 100%; object-fit: cover; }
+  .region-m::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,35,61,0) 45%, rgba(18,35,61,.75) 100%); }
+  .region-m span { position: absolute; z-index: 1; left: 12px; right: 12px; bottom: 10px; font-weight: 700; font-size: 16px; line-height: 1.2; }
+  .region-m small { display: block; font-weight: 500; font-size: 12px; opacity: .85; }
+  .regiones-m__pie { margin-top: 14px; font-size: 14px; color: var(--tinta-2); }
+
+  /* ---------- secciones del inicio ---------- */
+  .presenta, .vitrina, .vitrina-fila, .adonde, #presupuesto { display: none; }
+  .pasos--lineas .paso, .pasos--lineas .paso:first-child { padding: 16px 0; grid-template-columns: 44px 1fr; gap: 0 10px; }
+  .pasos--lineas .paso__num { font-size: 26px; }
+  .pasos--lineas h3 { font-size: 16px; }
+  .pasos--lineas .paso p { font-size: 14px; margin-top: 2px; }
+  .sin { font-size: 17px; margin-top: 18px; }
+  .verdad h2 { font-size: 24px; }
+  .verdad ul { margin: 18px 0 20px; gap: 12px; font-size: 14px; }
+  .verdad .ticket { display: none; }
+  .verdad.ver-ticket .ticket { display: block; }
+  .ver-ejemplo { margin-left: 8px; }
+  .verdad .btn { min-height: 44px; }
+  .respondo { border-radius: var(--r-caja); }
+  .respondo__guarda { height: 110px !important; }
+  .respondo__guarda svg { width: 70px !important; }
+  .respondo__texto { padding: 22px 18px !important; }
+  .respondo blockquote { font-size: 20px !important; line-height: 1.2; }
+  .respondo__btns { display: grid; gap: 8px; }
+  .respondo__btns .btn { width: 100%; }
+
+  /* ---------- barra fija de abajo: las dos acciones de siempre ---------- */
+  .barra-movil { position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; display: grid; grid-template-columns: 1fr 1.4fr; gap: 8px; padding: 10px var(--m-lado) calc(10px + env(safe-area-inset-bottom)); background: rgba(248,244,236,.96); backdrop-filter: saturate(1.4) blur(12px); border-top: 1px solid var(--linea); }
+  .barra-movil .btn { min-height: 48px; padding: 0 12px; }
+  .hoja-abierta .barra-movil, .panel-menu.abierto ~ .barra-movil { display: none; }
+  body.con-barra .barra-movil { display: none; }
+
+  /* ---------- pie más corto ---------- */
+  .pie { padding-top: 36px; }
+  .pie__arriba { gap: 24px 16px; }
+  .pie__marca p { font-size: 14px; }
+  .pie h2 { margin-bottom: 8px; }
+  .pie ul { font-size: 14px; }
+  .pie__legal { font-size: 12px; }
+
+  /* ---------- destinos: lista para recorrer ---------- */
+  .cabeza-pagina { padding-top: 24px; padding-bottom: 12px; }
+  .cabeza-pagina h1 { font-size: 30px; }
+  .filtros { top: 56px; padding: 10px 0; }
+  .filtros .regiones-chips { scrollbar-width: none; padding-bottom: 0; }
+  .filtros .regiones-chips::-webkit-scrollbar { display: none; }
+  .chip { min-height: 40px; padding: 0 14px; font-size: 14px; }
+  .sel--compacto { min-height: 40px; }
+  .region-bloque + .region-bloque { margin-top: 36px; }
+  .region-bloque h2 { font-size: 22px; }
+  .region-bloque .bajada { margin: 4px 0 14px; font-size: 14px; }
+  .grilla { grid-template-columns: 1fr; gap: 0; }
+  .grilla .tarjeta { display: grid; grid-template-columns: 104px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--linea); border-radius: 0; }
+  .grilla .tarjeta__foto { aspect-ratio: 1; border-radius: var(--r-ctrl); }
+  .grilla .tarjeta__cuerpo { padding: 2px 0 0; justify-content: center; }
+  .grilla .etiqueta { display: none; }
+
+  /* ---------- ficha: galería deslizable y texto a escala ---------- */
+  .migas { display: none; }
+  .galeria, .galeria--1, .galeria--2, .galeria--3 { display: flex; height: auto; margin: 12px calc(var(--m-lado) * -1) 0; padding: 0 var(--m-lado); gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-radius: 0; position: relative; }
+  .galeria::-webkit-scrollbar { display: none; }
+  .galeria figure, .galeria figure:not(:first-child) { display: block; flex: none; width: 100%; aspect-ratio: 4 / 3; border-radius: var(--r-caja); scroll-snap-align: center; }
+  .galeria__cuenta { position: absolute; right: calc(var(--m-lado) + 10px); margin-top: -40px; z-index: 3; padding: 4px 10px; border-radius: 999px; background: rgba(18,35,61,.7); color: var(--crema); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .ficha { padding: 20px 0 110px; }
+  .ficha__titulo h1 { font-size: 28px; }
+  .ficha__meta { margin-top: 12px; gap: 6px; }
+  .pastilla { font-size: 13px; padding: 5px 11px; }
+  .ficha section { padding: 22px 0; }
+  .ficha h2 { font-size: 19px; margin-bottom: 12px; }
+  .ficha__intro { font-size: 16px; }
+  .dias b { font-size: 15px; }
+  .dias span { font-size: 14px; }
+  .dias li { padding-bottom: 18px; }
+  .lista-check { font-size: 14px; }
+  .caja-precio { padding: 20px 18px; }
+  .caja-precio__monto { font-size: 36px; }
+  .barra-precio b { font-size: 20px; }
+
+  /* ---------- presupuesto, nosotros y textos ---------- */
+  .presupuesto h2 { font-size: 26px; }
+  .texto-largo__cuerpo { font-size: 15px; }
+  .texto-largo__cuerpo h2 { font-size: 20px; margin-top: 28px; }
+}
